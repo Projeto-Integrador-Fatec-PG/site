@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu carrinho | Bejiróó</title>
+    <link rel="stylesheet" href="../public/css/carrinho.css" />
+  </head>
+  <body class="site-page carrinho-page">
+    <div data-site-header></div>
+    <main class="container cart-main">
+      <div class="section-heading cart-heading">
+        <div>
+          <span class="eyebrow">Quase na hora de adoçar o dia</span>
+          <h1>Meu carrinho</h1>
+        </div>
+        <span class="cart-count">2 itens</span>
+      </div>
+
+      <div class="cart-layout">
+        <section class="cart-items" aria-labelledby="items-title">
+          <h2 id="items-title">Seus doces</h2>
+          <article class="cart-item">
+            <div class="cart-item-image product-image">brownie</div>
+            <div class="cart-item-info">
+              <h3>Brownie com Brigadeiro</h3>
+              <p>Tradicional</p>
+              <a class="text-link" href="produto_.html">Editar produto</a>
+            </div>
+            <div class="quantity" aria-label="Quantidade do brownie">
+              <button type="button" aria-label="Diminuir quantidade">−</button>
+              <span>1</span>
+              <button type="button" aria-label="Aumentar quantidade">+</button>
+            </div>
+            <strong class="cart-item-price">R$ 12,90</strong>
+          </article>
+
+          <article class="cart-item">
+            <div class="cart-item-image product-image">bolo</div>
+            <div class="cart-item-info">
+              <h3>Bolo de Cenoura Especial</h3>
+              <p>Fatia generosa</p>
+              <a class="text-link" href="produto_.html">Editar produto</a>
+            </div>
+            <div class="quantity" aria-label="Quantidade do bolo">
+              <button type="button" aria-label="Diminuir quantidade">−</button>
+              <span>1</span>
+              <button type="button" aria-label="Aumentar quantidade">+</button>
+            </div>
+            <strong class="cart-item-price">R$ 42,00</strong>
+          </article>
+
+          <a class="back-link" href="cardapio_.html">← Continuar comprando</a>
+        </section>
+
+        <aside class="cart-summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Resumo do pedido</h2>
+          <div class="summary-line"><span>Subtotal</span><strong>R$ 54,90</strong></div>
+          <div class="summary-line"><span>Entrega</span><span class="summary-muted">A calcular</span></div>
+          <div class="summary-divider"></div>
+          <div class="summary-total"><span>Total</span><strong>R$ 54,90</strong></div>
+          <button class="button button-dark full" type="button">Continuar para entrega <span>→</span></button>
+          <p class="summary-note">O valor da entrega será definido de acordo com o seu endereço.</p>
+        </aside>
+      </div>
+    </main>
+    <script src="../public/js/app.js"></script>
+  </body>
+</html>

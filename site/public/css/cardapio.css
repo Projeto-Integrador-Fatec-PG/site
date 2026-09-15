@@ -1,0 +1,12 @@
+@import url("./style.css");
+
+.cardapio-page .section-heading h1 {
+  font:
+    700 38px "Cormorant Garamond",
+    serif;
+  margin: 5px 0;
+}
+
+.cardapio-page .choice {
+  flex-wrap: wrap;
+}

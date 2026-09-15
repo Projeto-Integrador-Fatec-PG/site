@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciar Produtos | Bejiróó</title>
+    <link rel="stylesheet" href="../../public/css/admin-produtos.css" />
+  </head>
+  <body class="produtos-page">
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard_.html"
+          ><span class="brand-mark">🍰</span><span>Bejiróó</span></a
+        >
+        <nav class="sidebar-nav">
+          <a href="dashboard_.html">▣ Dashboard</a
+          ><a class="active" href="gerenciar_produtos_.html">▢ Produtos</a
+          ><a href="categorias_de_produtos_.html">◇ Categorias</a
+          ><a href="lista_de_pedidos_.html">🛒 Pedidos</a
+          ><a href="#">⚙ Configurações</a>
+        </nav>
+      </aside>
+      <main class="admin-main">
+        <header class="admin-top">
+          <h1>Gerenciar Produtos</h1>
+          <span class="admin-user">◉ Administrador</span>
+        </header>
+        <section class="panel">
+          <div class="toolbar">
+            <input placeholder="⌕ Buscar produto..." /><select>
+              <option>Categoria</option>
+              <option>Bolos</option>
+              <option>Doces</option></select
+            ><select>
+              <option>Sortimento...</option>
+              <option>Maior preço</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Foto</th>
+                  <th>Nome</th>
+                  <th>Preço</th>
+                  <th>Estoque</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="admin-product-image"></div></td>
+                  <td>Bolo de Cenoura Especial</td>
+                  <td>R$ 42,00</td>
+                  <td>15 un.</td>
+                  <td class="status active">ativo</td>
+                  <td>✎　▮</td>
+                </tr>
+                <tr>
+                  <td><div class="admin-product-image"></div></td>
+                  <td>Bolo de Pastirry</td>
+                  <td>R$ 45,00</td>
+                  <td>15 un.</td>
+                  <td class="status active">ativo</td>
+                  <td>✎　▮</td>
+                </tr>
+                <tr>
+                  <td><div class="admin-product-image"></div></td>
+                  <td>Bolo de Desserries</td>
+                  <td>R$ 45,00</td>
+                  <td>15 un.</td>
+                  <td class="status pending">inativo</td>
+                  <td>✎　▮</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="../../public/js/admin-produtos.js"></script>
+</html>

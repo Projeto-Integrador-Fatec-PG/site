@@ -1,0 +1,9 @@
+@import url("./style.css");
+
+.produto-page .detail-copy {
+  padding-top: 12px;
+}
+
+.produto-page .detail-image {
+  box-shadow: var(--shadow);
+}

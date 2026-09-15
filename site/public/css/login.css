@@ -1,0 +1,30 @@
+@import url("./style.css");
+
+.auth-layout {
+  border-color: #92785f;
+}
+
+.auth-form .field input {
+  border-color: #9d8065;
+}
+
+.auth-side {
+  border-left: 1px solid #b39a7e;
+}
+
+.auth-side .image-placeholder {
+  border-color: #b39a7e;
+}
+
+.auth-form form {
+  display: grid;
+  gap: 4px;
+}
+
+.auth-form form button {
+  margin-top: 12px;
+}
+
+.auth-form .sub:last-child {
+  margin-top: 22px;
+}
