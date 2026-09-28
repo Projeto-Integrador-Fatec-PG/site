@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Bejiróó</title>
+    <link rel="icon" type="image/svg+xml" href="../../public/imgs/logo.svg" />
+    <link rel="stylesheet" href="../../public/css/admin-dashboard.css" />
+  </head>
+  <body class="dashboard-page">
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard_.html"
+          ><span class="brand-mark"><img src="../../public/imgs/logo.svg" alt="Logo Bejiróó" /></span><span>Bejiróó</span></a
+        >
+        <nav class="sidebar-nav">
+          <a class="active" href="dashboard_.html">▣ Dashboard</a
+          ><a href="gerenciar_produtos_.html">▢ Produtos</a
+          ><a href="categorias_de_produtos_.html">◇ Categorias</a
+          ><a href="lista_de_pedidos_.html">🛒 Pedidos</a
+          ><a href="configuracoes_.html">⚙ Configurações</a>
+        </nav>
+      </aside>
+      <main class="admin-main">
+        <header class="admin-top">
+          <h1>Dashboard</h1>
+          <div class="admin-profile"><button class="admin-user admin-user-toggle" type="button" data-admin-menu-toggle>Administrador</button><div class="admin-user-menu" data-admin-menu hidden><a href="../index.html">Ir para o site</a><a href="configuracoes_.html">Configurações</a><button type="button" data-admin-logout>Sair</button></div></div>
+        </header>
+        <section class="stats">
+          <div class="stat">
+            <small>Total de Produtos</small><strong data-metric="products">0</strong>
+          </div>
+          <div class="stat"><small>Receita estimada</small><strong data-metric="revenue">R$ 0</strong></div>
+          <div class="stat"><small>Estoque total</small><strong data-metric="stock">0</strong></div>
+        </section>
+        <div class="admin-columns">
+          <section class="panel">
+            <h2>Produtos Recentes</h2>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Preço</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody data-recent-products></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="panel dashboard-charts">
+            <h2>Vendas por categoria</h2>
+            <div class="chart-bars" data-category-chart></div>
+          </section>
+          <section class="panel dashboard-charts">
+            <h2>Valor estimado em estoque</h2>
+            <div class="chart-bars" data-stock-chart></div>
+          </section>
+          <section class="panel">
+            <h2>Ações rápidas</h2>
+            <div class="quick-actions">
+              <a class="button button-dark" href="gerenciar_produtos_.html"
+                >Adicionar Produto</a
+              ><a
+                class="button button-light"
+                href="categorias_de_produtos_.html"
+                >Nova Categoria</a
+              >
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="../../public/js/products-store.js"></script>
+  <script src="../../public/js/admin-menu.js"></script>
+  <script src="../../public/js/admin-dashboard.js"></script>
+</html>

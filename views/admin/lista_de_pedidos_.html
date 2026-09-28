@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Pedidos | Bejiróó</title>
+    <link rel="icon" type="image/svg+xml" href="../../public/imgs/logo.svg" />
+    <link rel="stylesheet" href="../../public/css/admin-pedidos.css" />
+  </head>
+  <body class="pedidos-page">
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard_.html"
+          ><span class="brand-mark"><img src="../../public/imgs/logo.svg" alt="Logo Bejiróó" /></span><span>Bejiróó</span></a
+        >
+        <nav class="sidebar-nav">
+          <a href="dashboard_.html">▣ Dashboard</a
+          ><a href="gerenciar_produtos_.html">▢ Produtos</a
+          ><a href="categorias_de_produtos_.html">◇ Categorias</a
+          ><a class="active" href="lista_de_pedidos_.html">🛒 Pedidos</a
+          ><a href="configuracoes_.html">⚙ Configurações</a>
+        </nav>
+      </aside>
+      <main class="admin-main">
+        <header class="admin-top">
+          <h1>Lista de Pedidos</h1>
+          <div class="admin-profile"><button class="admin-user admin-user-toggle" type="button" data-admin-menu-toggle>Administrador</button><div class="admin-user-menu" data-admin-menu hidden><a href="../index.html">Ir para o site</a><a href="configuracoes_.html">Configurações</a><button type="button" data-admin-logout>Sair</button></div></div>
+        </header>
+        <section class="stats">
+          <div class="stat"><small>Pedidos Hoje</small><strong data-order-metric="total">0</strong></div>
+          <div class="stat"><small>Pendentes</small><strong data-order-metric="pending">0</strong></div>
+          <div class="stat"><small>Concluídos</small><strong data-order-metric="done">0</strong></div>
+        </section>
+        <section class="panel">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID Pedido</th>
+                  <th>Cliente</th>
+                  <th>Data/Hora</th>
+                  <th>Status do Pedido</th>
+                  <th>Total</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody data-order-rows></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+  <div class="order-modal" data-order-modal hidden>
+    <div class="order-modal-content" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+      <div class="order-modal-header"><h2 id="order-modal-title">Detalhes do pedido</h2><button class="modal-close" type="button" data-close-order aria-label="Fechar">&times;</button></div>
+      <form data-order-form>
+        <input type="hidden" name="id" />
+        <div class="order-form-grid">
+          <label>Cliente<input name="customer" required /></label>
+          <label>Data e hora<input name="date" required /></label>
+          <label>Status<select name="status"><option value="pending">Pendente</option><option value="preparing">Em Preparo</option><option value="done">Entregue</option></select></label>
+          <label>Total<input name="total" type="number" min="0" step="0.01" required /></label>
+        </div>
+        <label>Itens pedidos<textarea name="items" rows="4" required></textarea></label>
+        <div class="order-form-actions"><button class="button button-light" type="button" data-close-order>Cancelar</button><button class="button button-dark" type="submit">Salvar alterações</button></div>
+      </form>
+    </div>
+  </div>
+  <script src="../../public/js/admin-menu.js"></script>
+  <script src="../../public/js/orders-store.js"></script>
+  <script src="../../public/js/admin-pedidos.js"></script>
+</html>

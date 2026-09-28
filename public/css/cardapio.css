@@ -1,0 +1,185 @@
+@import url("./style.css");
+
+/* ── Cardápio ──────────────────────────────────────────────
+   Wireframe: título centralizado, filtros por categoria
+   como pills, grid 4 colunas com card hover que expande
+   e mostra descrição (estado ativo = chocolate escuro)
+   ────────────────────────────────────────────────────────── */
+
+/* Título centralizado conforme wireframe */
+.cardapio-page .section-heading {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 24px;
+}
+
+.cardapio-page .section-heading h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin: 6px 0 0;
+}
+
+/* Filtros: linha de pills */
+.cardapio-page .choice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.cardapio-page .choice button {
+  padding: 9px 22px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.cardapio-page .choice button:hover {
+  background: var(--bege);
+  border-color: var(--chocolate);
+  color: var(--chocolate);
+}
+
+.cardapio-page .choice button.selected {
+  background: var(--chocolate);
+  border-color: var(--chocolate);
+  color: #FFF8EF;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(107, 58, 46, 0.22);
+}
+
+/* Grid 4 colunas */
+.cardapio-page .product-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.cardapio-page .product-card.is-filtered-out,
+.cardapio-page .product-card[hidden] {
+  display: none !important;
+}
+
+/* Card do cardápio: imagem quadrada */
+.cardapio-page .product-card .product-image {
+  height: 165px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
+.cardapio-page .product-card h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--chocolate);
+  margin: 10px 2px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.cardapio-page .product-card strong {
+  font-size: 14px;
+  color: var(--terracota);
+  margin: 0 2px;
+}
+
+/* Estado hover: card vira chocolate com texto claro */
+.cardapio-page .product-card:hover {
+  background: var(--chocolate);
+  border-color: var(--chocolate);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardapio-page .product-card:hover h3,
+.cardapio-page .product-card:hover strong {
+  color: #FFF8EF;
+}
+
+.cardapio-page .product-card:hover .product-image {
+  background: rgba(255, 248, 239, 0.15);
+  border-color: rgba(255, 248, 239, 0.2);
+}
+
+/* Descrição oculta que aparece no hover */
+.cardapio-page .product-card .product-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 2px;
+  line-height: 1.5;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+  opacity: 0;
+}
+
+.cardapio-page .product-card:hover .product-desc {
+  max-height: 60px;
+  opacity: 1;
+  color: rgba(255, 248, 239, 0.8);
+}
+
+/* Acessibilidade: ícone de acessibilidade */
+.a11y-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1E4DB7;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: transform var(--transition), background var(--transition);
+  z-index: 200;
+}
+
+.a11y-btn:hover {
+  transform: scale(1.1);
+  background: #1840A0;
+}
+
+/* ── Responsividade cardápio ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .cardapio-page .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .cardapio-page .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .cardapio-page .choice {
+    gap: 8px;
+  }
+
+  .cardapio-page .choice button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .cardapio-page .product-card .product-image {
+    height: 130px;
+  }
+}
+
+@media (max-width: 420px) {
+  .cardapio-page .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

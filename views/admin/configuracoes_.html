@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configurações | Bejiróó</title>
+    <link rel="icon" type="image/svg+xml" href="../../public/imgs/logo.svg" />
+    <link rel="stylesheet" href="../../public/css/admin-configuracoes.css" />
+  </head>
+  <body class="configuracoes-page">
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard_.html"><span class="brand-mark"><img src="../../public/imgs/logo.svg" alt="Logo Bejiróó" /></span><span>Bejiróó</span></a>
+        <nav class="sidebar-nav">
+          <a href="dashboard_.html">▣ Dashboard</a>
+          <a href="gerenciar_produtos_.html">▢ Produtos</a>
+          <a href="categorias_de_produtos_.html">◇ Categorias</a>
+          <a href="lista_de_pedidos_.html">🛒 Pedidos</a>
+          <a class="active" href="configuracoes_.html">⚙ Configurações</a>
+        </nav>
+      </aside>
+      <main class="admin-main">
+        <header class="admin-top">
+          <h1>Configurações</h1>
+          <div class="admin-profile"><button class="admin-user admin-user-toggle" type="button" data-admin-menu-toggle>Administrador</button><div class="admin-user-menu" data-admin-menu hidden><a href="../index.html">Ir para o site</a><a href="configuracoes_.html">Configurações</a><button type="button" data-admin-logout>Sair</button></div></div>
+        </header>
+        <section class="settings-layout">
+          <form class="panel settings-form" data-settings-form>
+            <h2>Dados da loja</h2>
+            <label>Nome da loja<input name="storeName" required /></label>
+            <label>E-mail de contato<input name="email" type="email" required /></label>
+            <label>WhatsApp<input name="phone" required /></label>
+            <label>Endereço<textarea name="address" rows="3"></textarea></label>
+            <h2>Preferências</h2>
+            <label class="settings-check"><input name="notifications" type="checkbox" /> Receber notificações de novos pedidos</label>
+            <p class="settings-message" data-settings-message aria-live="polite"></p>
+            <button class="button button-dark" type="submit">Salvar configurações</button>
+          </form>
+          <section class="panel settings-brand">
+            <img src="../../public/imgs/logo.svg" alt="Logo Bejiróó" />
+            <h2>Bejiróó</h2>
+            <p>As informações desta área são salvas neste navegador e usadas como referência no painel administrativo.</p>
+            <a class="button button-light" href="../index.html">Visualizar site</a>
+          </section>
+        </section>
+        <section class="settings-data-grid">
+          <section class="panel data-section">
+            <div class="data-section-heading"><h2>Usuários cadastrados</h2><span data-users-count>0 usuários</span></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Nome</th><th>E-mail</th><th>Tipo</th><th>Ações</th></tr></thead><tbody data-users-list></tbody></table></div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <div class="user-modal" data-user-modal hidden>
+      <div class="user-modal-content" role="dialog" aria-modal="true" aria-labelledby="user-modal-title">
+        <div class="data-section-heading"><h2 id="user-modal-title">Editar usuário</h2><button class="modal-close" type="button" data-close-user>&times;</button></div>
+        <form data-user-form><input type="hidden" name="id" /><label>Nome<input name="name" required /></label><label>E-mail<input name="email" type="email" required /></label><label>Senha<input name="password" type="text" required /></label><p class="settings-message" data-user-message></p><div class="settings-actions"><button class="button button-light" type="button" data-close-user>Cancelar</button><button class="button button-dark" type="submit">Salvar usuário</button></div></form>
+      </div>
+    </div>
+    <script src="../../public/js/admin-menu.js"></script>
+    <script src="../../public/js/admin-configuracoes.js"></script>
+  </body>
+</html>

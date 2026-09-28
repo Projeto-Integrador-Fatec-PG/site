@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login administrativo | Bejiróó</title>
+    <link rel="icon" type="image/svg+xml" href="../../public/imgs/logo.svg" />
+    <link rel="stylesheet" href="../../public/css/admin-login.css" />
+  </head>
+  <body class="auth-page admin-login-page">
+    <header class="admin-login-nav">
+      <div class="container">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark"><img src="../../public/imgs/logo.svg" alt="Logo Bejiróó" /></span>
+          <span class="brand-name">BEJIRÓÓ</span>
+        </a>
+        <nav class="site-nav">
+          <a href="../index.html">Menu</a>
+          <a href="../cardapio_.html">Cardápio</a>
+          <a href="../sobre_nos_.html">Sobre nós</a>
+          <a href="../carrinho_.html">Carrinho</a>
+          <a href="#">Contato</a>
+        </nav>
+        <div class="spacer"></div>
+        <a class="button button-dark" href="login_.html">Login Administrador</a>
+      </div>
+    </header>
+
+    <main class="admin-login-main">
+      <div class="auth-layout">
+        <section class="auth-side admin-side">
+          <span class="brand-mark"><img src="../../public/imgs/logo.svg" alt="Logo Bejiróó" /></span>
+          <h2>BEJIRÓÓ</h2>
+          <h1>Bem-vindo(a) de volta!<br />Administrador</h1>
+          <p class="sub">
+            Faça login para continuar<br />e aproveitar o melhor da Bejiróó.
+          </p>
+        </section>
+        <section class="auth-form">
+          <form data-admin-login>
+            <div class="field">
+              <label for="admin-cpf">CPF</label>
+              <input id="admin-cpf" type="text" placeholder="Digite seu CPF" />
+            </div>
+            <div class="field">
+              <label for="admin-email">E-mail</label>
+              <input
+                id="admin-email"
+                type="email"
+                placeholder="admin@admin"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="admin-password">Senha</label>
+              <div class="input-icon-wrap">
+                <input
+                  id="admin-password"
+                  type="password"
+                  placeholder="admin"
+                  required
+                />
+                <button
+                  type="button"
+                  class="input-icon-right"
+                  aria-label="Mostrar senha"
+                  data-toggle-password="admin-password"
+                >
+                  👁
+                </button>
+              </div>
+            </div>
+            <p class="form-footer-link"><a href="#">Esqueceu a senha?</a></p>
+            <p class="login-error" aria-live="polite"></p>
+            <button class="button button-dark full" type="submit">Entrar</button>
+          </form>
+          <div class="auth-divider">ou</div>
+          <p class="sub">
+            Ainda não tem uma conta? <a class="text-link" href="#">Cadastre-se</a>
+          </p>
+        </section>
+      </div>
+    </main>
+    <div class="admin-login-wave" aria-hidden="true"></div>
+    <script src="../../public/js/admin-login.js"></script>
+  </body>
+</html>

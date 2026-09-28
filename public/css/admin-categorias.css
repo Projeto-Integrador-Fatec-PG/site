@@ -1,0 +1,164 @@
+@import url("./style.css");
+
+/* ── Admin Categorias ──────────────────────────────────────
+   Wireframe: lista de categorias arrastável à esquerda
+   (com ícone ⁝⁝), formulário "Nova Categoria" à direita
+   com upload de imagem, nome e descrição
+   ────────────────────────────────────────────────────────── */
+
+.categorias-page .category-layout {
+  grid-template-columns: 1fr 1.1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.categorias-page .panel {
+  min-height: 300px;
+}
+
+/* ── Lista de categorias ─────────────────────────────────── */
+.categorias-page .category-list > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--cafe);
+  cursor: grab;
+  user-select: none;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.categorias-page .category-list > div:hover {
+  border-color: var(--chocolate);
+  background: rgba(247, 233, 215, 0.4);
+  box-shadow: var(--shadow-sm);
+}
+
+.categorias-page .category-list > div:active {
+  cursor: grabbing;
+  box-shadow: var(--shadow-md);
+  background: var(--bege);
+}
+
+/* Ícone de arraste à esquerda */
+.categorias-page .category-list > div > span:first-child::before {
+  content: "⠿ ";
+  color: var(--border);
+  font-size: 16px;
+  margin-right: 4px;
+  transition: color var(--transition);
+}
+
+.categorias-page .category-list > div:hover > span:first-child::before {
+  color: var(--text-muted);
+}
+
+/* Badge de contagem */
+.categorias-page .category-list > div span:last-child {
+  background: var(--bege);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 2px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--chocolate);
+  min-width: 36px;
+  text-align: center;
+  transition: background var(--transition);
+}
+
+.categorias-page .category-list > div:hover span:last-child {
+  background: var(--chocolate);
+  color: #fff;
+  border-color: var(--chocolate);
+}
+
+/* Botão nova categoria na lista */
+.categorias-page .category-list .button-light {
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+  border-style: dashed;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.categorias-page .category-list .button-light:hover {
+  background: rgba(107, 58, 46, 0.05);
+  color: var(--chocolate);
+  border-color: var(--chocolate);
+  border-style: solid;
+}
+
+/* ── Formulário nova categoria ───────────────────────────── */
+.categorias-page .form-panel {
+  gap: 16px;
+}
+
+.categorias-page .form-panel h2 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+/* Upload de imagem */
+.categorias-page .form-panel .image-placeholder {
+  height: 120px;
+  border-radius: var(--radius-sm);
+  border-style: dashed;
+  border-color: var(--border);
+  background: rgba(247, 233, 215, 0.3);
+  cursor: pointer;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.categorias-page .form-panel .image-placeholder:hover {
+  border-color: var(--chocolate);
+  background: rgba(233, 209, 181, 0.3);
+}
+
+.categorias-page .form-panel .image-placeholder::after {
+  content: "Clique para adicionar imagem";
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Campos */
+.categorias-page .form-panel .field input,
+.categorias-page .form-panel .field textarea {
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+
+.categorias-page .form-panel .field textarea {
+  min-height: 100px;
+}
+
+/* Botão salvar */
+.categorias-page .form-panel .button-dark {
+  height: 46px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsividade categorias ───────────────────────────── */
+@media (max-width: 760px) {
+  .categorias-page .category-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .categorias-page .panel {
+    min-height: auto;
+  }
+}

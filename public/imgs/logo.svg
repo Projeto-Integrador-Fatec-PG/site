@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Logo Bejiróó">
+  <title>Bejiróó</title>
+  <!-- Chocolate "C" ring -->
+  <circle cx="60" cy="60" r="34" fill="none" stroke="#6B3A2E" stroke-width="24"
+          stroke-linecap="round" stroke-dasharray="166.2 300" stroke-dashoffset="0" />
+  <!-- subtle chocolate shine -->
+  <circle cx="60" cy="60" r="34" fill="none" stroke="#8B5A3E" stroke-width="4"
+          stroke-linecap="round" stroke-dasharray="38 300" stroke-dashoffset="-8" opacity="0.5" />
+  <!-- sprinkle texture on the ring -->
+  <g fill="#F7E9D7" opacity="0.85">
+    <ellipse cx="34" cy="32" rx="2.6" ry="1.4" transform="rotate(-30 34 32)"/>
+    <ellipse cx="27" cy="55" rx="2.6" ry="1.4" transform="rotate(10 27 55)"/>
+    <ellipse cx="34" cy="80" rx="2.6" ry="1.4" transform="rotate(40 34 80)"/>
+    <ellipse cx="55" cy="93" rx="2.6" ry="1.4" transform="rotate(70 55 93)"/>
+    <ellipse cx="48" cy="20" rx="2.6" ry="1.4" transform="rotate(-10 48 20)"/>
+  </g>
+  <!-- chocolate drip from the top opening -->
+  <path d="M64 24 C61 30 58 35 61 40 C63 43 68 43 69 39 C71 34 68 28 64 24 Z" fill="#6B3A2E"/>
+  <circle cx="65.5" cy="48" r="3.4" fill="#6B3A2E"/>
+  <!-- strawberries nestled in the opening -->
+  <g transform="translate(68,75) rotate(-8)">
+    <path d="M0 -15 C-13 -15 -14 -2 -13 5 C-11 16 -5 20 0 20 C5 20 11 16 13 5 C14 -2 13 -15 0 -15 Z" fill="#B23A36"/>
+    <g fill="#F7B6B0" opacity="0.9">
+      <circle cx="-5" cy="-5" r="1.5"/>
+      <circle cx="4" cy="-2" r="1.5"/>
+      <circle cx="-3" cy="6" r="1.5"/>
+      <circle cx="5" cy="8" r="1.5"/>
+      <circle cx="0" cy="-11" r="1.5"/>
+    </g>
+    <path d="M-7 -17 C-3 -23 3 -23 7 -17 C3 -19 -3 -19 -7 -17 Z" fill="#3F7A34"/>
+  </g>
+  <g transform="translate(84,70) rotate(10)">
+    <path d="M0 -12 C-10 -12 -11 -1 -10 4 C-9 13 -4 16 0 16 C4 16 9 13 10 4 C11 -1 10 -12 0 -12 Z" fill="#D9453F"/>
+    <g fill="#F7B6B0" opacity="0.9">
+      <circle cx="-4" cy="-4" r="1.2"/>
+      <circle cx="3" cy="-1" r="1.2"/>
+      <circle cx="-2" cy="5" r="1.2"/>
+      <circle cx="4" cy="7" r="1.2"/>
+    </g>
+    <path d="M-6 -13 C-2 -18 2 -18 6 -13 C2 -15 -2 -15 -6 -13 Z" fill="#3F7A34"/>
+  </g>
+</svg>

@@ -1,0 +1,162 @@
+@import url("./style.css");
+
+/* ── Admin Dashboard ───────────────────────────────────────
+   Wireframe: sidebar chocolate escuro, área principal creme,
+   3 stats cards no topo, tabela de produtos recentes +
+   painel de ações rápidas ao lado
+   ────────────────────────────────────────────────────────── */
+
+.dashboard-page .admin-columns {
+  align-items: start;
+  gap: 20px;
+}
+
+.dashboard-page .admin-columns {
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
+}
+
+.dashboard-charts {
+  min-width: 0;
+}
+
+.chart-bars {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 82px minmax(80px, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.chart-row strong {
+  min-width: 68px;
+  color: var(--chocolate);
+  font-size: 11px;
+  text-align: right;
+}
+
+.chart-track {
+  height: 12px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: var(--surface-alt);
+}
+
+.chart-track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--terracota);
+  transition: width 400ms ease;
+}
+
+.chart-track i.stock-bar {
+  background: var(--chocolate);
+}
+
+/* ── Stats: ícone colorido em cada card ──────────────────── */
+.dashboard-page .stats {
+  margin-bottom: 24px;
+}
+
+.dashboard-page .stat:nth-child(1) {
+  border-top: 3px solid var(--chocolate);
+}
+
+.dashboard-page .stat:nth-child(2) {
+  border-top: 3px solid var(--terracota);
+}
+
+.dashboard-page .stat:nth-child(3) {
+  border-top: 3px solid var(--green);
+}
+
+.dashboard-page .stat small {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.dashboard-page .stat strong {
+  font-size: 36px;
+  color: var(--cafe);
+}
+
+/* ── Tabela de produtos recentes ─────────────────────────── */
+.dashboard-page .panel h2 {
+  font-size: 17px;
+  letter-spacing: 0.01em;
+}
+
+/* Linha de produto: adiciona imagem placeholder */
+.dashboard-page .data-table td:first-child {
+  width: 46px;
+}
+
+/* Destacar linha ao passar mouse */
+.dashboard-page .data-table tbody tr:hover td {
+  background: rgba(233, 209, 181, 0.2);
+}
+
+/* ── Ações rápidas ───────────────────────────────────────── */
+.dashboard-page .quick-actions {
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.dashboard-page .quick-actions .button {
+  border-radius: var(--radius-sm);
+  height: 46px;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.dashboard-page .quick-actions .button-dark {
+  box-shadow: 0 4px 14px rgba(107, 58, 46, 0.2);
+}
+
+/* ── Sidebar: item ativo destacado ───────────────────────── */
+.dashboard-page .sidebar-nav a.active {
+  background: rgba(255, 235, 200, 0.25);
+  color: #fff;
+  box-shadow: inset 3px 0 0 rgba(255,235,200,0.5);
+}
+
+/* ── Admin top: user badge ───────────────────────────────── */
+.dashboard-page .admin-user {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  padding: 6px 14px 6px 8px;
+  border-radius: var(--radius-pill);
+  gap: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Responsividade dashboard ────────────────────────────── */
+@media (max-width: 760px) {
+  .dashboard-page .admin-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-page .stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .dashboard-page .stat strong {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-page .stats {
+    grid-template-columns: 1fr;
+  }
+}

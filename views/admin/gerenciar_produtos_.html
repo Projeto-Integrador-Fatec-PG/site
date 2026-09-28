@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciar Produtos | Bejiróó</title>
+    <link rel="icon" type="image/svg+xml" href="../../public/imgs/logo.svg" />
+    <link rel="stylesheet" href="../../public/css/admin-produtos.css" />
+  </head>
+  <body class="produtos-page">
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <a class="brand" href="dashboard_.html"
+          ><span class="brand-mark"><img src="../../public/imgs/logo.svg" alt="Logo Bejiróó" /></span><span>Bejiróó</span></a
+        >
+        <nav class="sidebar-nav">
+          <a href="dashboard_.html">▣ Dashboard</a
+          ><a class="active" href="gerenciar_produtos_.html">▢ Produtos</a
+          ><a href="categorias_de_produtos_.html">◇ Categorias</a
+          ><a href="lista_de_pedidos_.html">🛒 Pedidos</a
+          ><a href="configuracoes_.html">⚙ Configurações</a>
+        </nav>
+      </aside>
+      <main class="admin-main">
+        <header class="admin-top">
+          <h1>Gerenciar Produtos</h1>
+          <div class="admin-profile"><button class="admin-user admin-user-toggle" type="button" data-admin-menu-toggle>Administrador</button><div class="admin-user-menu" data-admin-menu hidden><a href="../index.html">Ir para o site</a><a href="configuracoes_.html">Configurações</a><button type="button" data-admin-logout>Sair</button></div></div>
+        </header>
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Produtos cadastrados</h2>
+            <button class="button button-dark" type="button" data-open-product-form>Adicionar produto</button>
+          </div>
+          <div class="toolbar">
+            <input type="text" placeholder="Buscar produto..." aria-label="Buscar produto" /><select data-category-filter aria-label="Filtrar por categoria">
+              <option value="todos">Todas as categorias</option>
+              <option value="bolos">Bolos</option>
+              <option value="tortas">Tortas</option>
+              <option value="doces">Doces</option>
+              <option value="sobremesas">Sobremesas</option></select
+            ><select data-sort-filter aria-label="Ordenar produtos">
+              <option value="default">Ordenar por...</option>
+              <option value="price-desc">Maior preço</option>
+              <option value="price-asc">Menor preço</option>
+              <option value="name-asc">Nome (A-Z)</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Foto</th>
+                  <th>Nome</th>
+                  <th>Preço</th>
+                  <th>Estoque</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody data-product-rows></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="product-modal" data-product-modal hidden>
+      <div class="product-modal-content" role="dialog" aria-modal="true" aria-labelledby="product-form-title">
+        <div class="product-modal-header">
+          <h2 id="product-form-title">Adicionar produto</h2>
+          <button class="modal-close" type="button" data-close-product-form aria-label="Fechar">&times;</button>
+        </div>
+        <form data-product-form>
+          <input type="hidden" name="id" />
+          <div class="product-form-grid">
+            <label>Nome<input name="name" required maxlength="100" /></label>
+            <label>Categoria<select name="category" required><option value="bolos">Bolos</option><option value="tortas">Tortas</option><option value="doces">Doces</option><option value="sobremesas">Sobremesas</option></select></label>
+            <label>Preço<input name="price" type="number" min="0.01" step="0.01" required /></label>
+            <label>Estoque<input name="stock" type="number" min="0" step="1" required /></label>
+          </div>
+          <label>Descrição<textarea name="description" rows="3" maxlength="200" required></textarea></label>
+          <label>Rótulo da imagem<input name="image" maxlength="30" placeholder="ex.: trufa" /></label>
+          <p class="form-message" data-product-message aria-live="polite"></p>
+          <div class="product-form-actions"><button class="button button-light" type="button" data-close-product-form>Cancelar</button><button class="button button-dark" type="submit">Salvar produto</button></div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="../../public/js/admin-menu.js"></script>
+  <script src="../../public/js/products-store.js"></script>
+  <script src="../../public/js/admin-produtos.js"></script>
+</html>

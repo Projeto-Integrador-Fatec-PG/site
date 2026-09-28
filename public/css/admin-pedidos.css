@@ -1,0 +1,248 @@
+@import url("./style.css");
+
+/* ── Admin Lista de Pedidos ────────────────────────────────
+   Wireframe: 3 stats (Pedidos Hoje / Pendentes / Concluídos)
+   com ícones coloridos, tabela com badge de status colorido
+   (Concluído verde, Em Preparo amarelo, Pendente vermelho),
+   ações (olho + impressora)
+   ────────────────────────────────────────────────────────── */
+
+.pedidos-page .panel {
+  min-height: 280px;
+}
+
+/* ── Stats customizados para pedidos ─────────────────────── */
+.pedidos-page .stats {
+  margin-bottom: 24px;
+}
+
+/* Stat: Pedidos Hoje */
+.pedidos-page .stat:nth-child(1) {
+  border-top: 3px solid var(--chocolate);
+}
+
+.pedidos-page .stat:nth-child(1) .stat-icon {
+  color: var(--chocolate);
+}
+
+/* Stat: Pendentes */
+.pedidos-page .stat:nth-child(2) {
+  border-top: 3px solid var(--yellow);
+}
+
+.pedidos-page .stat:nth-child(2) .stat-icon {
+  color: var(--yellow);
+}
+
+/* Stat: Concluídos */
+.pedidos-page .stat:nth-child(3) {
+  border-top: 3px solid var(--green);
+}
+
+.pedidos-page .stat:nth-child(3) .stat-icon {
+  color: var(--green);
+}
+
+/* ── Tabela de pedidos ───────────────────────────────────── */
+.pedidos-page .data-table {
+  min-width: 620px;
+}
+
+/* Coluna ID */
+.pedidos-page .data-table td:first-child {
+  font-family: "Poppins", monospace;
+  font-weight: 700;
+  color: var(--chocolate);
+  font-size: 13px;
+}
+
+/* Coluna cliente */
+.pedidos-page .data-table td:nth-child(2) {
+  font-weight: 600;
+  color: var(--cafe);
+}
+
+/* Coluna data/hora */
+.pedidos-page .data-table td:nth-child(3) {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── Badges de status (sobrescrevem o padrão) ────────────── */
+.pedidos-page .status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* Concluído: verde sólido */
+.pedidos-page .status.done {
+  background: var(--green) !important;
+  color: #fff !important;
+}
+
+/* Em Preparo: amarelo/âmbar sólido */
+.pedidos-page .status.preparing {
+  background: var(--yellow) !important;
+  color: #fff !important;
+}
+
+/* Pendente: vermelho sólido */
+.pedidos-page .status.pending {
+  background: var(--red) !important;
+  color: #fff !important;
+}
+
+/* Ativo (genérico) */
+.pedidos-page .status.active {
+  background: var(--green) !important;
+  color: #fff !important;
+}
+
+/* ── Coluna total ─────────────────────────────────────────── */
+.pedidos-page .data-table td:nth-child(5) {
+  font-weight: 700;
+  color: var(--chocolate);
+}
+
+/* ── Ações ───────────────────────────────────────────────── */
+.pedidos-page .data-table td:last-child {
+  white-space: nowrap;
+}
+
+.pedidos-page .action-btn {
+  background: none;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  margin-right: 4px;
+}
+
+.pedidos-page .action-btn:hover {
+  background: var(--bege);
+  color: var(--chocolate);
+  border-color: var(--border);
+}
+
+.pedidos-page .action-btn.deliver {
+  color: var(--green);
+}
+
+.pedidos-page .action-btn.deliver:hover {
+  background: rgba(30, 155, 92, 0.12);
+  border-color: var(--green);
+}
+
+/* Hover linha */
+.pedidos-page .data-table tbody tr:hover td {
+  background: rgba(233, 209, 181, 0.22);
+}
+
+.order-modal[hidden] {
+  display: none;
+}
+
+.order-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(58, 33, 27, 0.48);
+}
+
+.order-modal-content {
+  width: min(640px, 100%);
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.order-modal-header,
+.order-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.order-modal-header { margin-bottom: 22px; }
+.order-modal-header h2 { margin: 0; }
+
+.modal-close {
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.order-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.order-modal label {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.order-modal input,
+.order-modal select,
+.order-modal textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fffaf1;
+  color: var(--text);
+  resize: vertical;
+}
+
+.order-form-actions {
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* ── Responsividade pedidos ──────────────────────────────── */
+@media (max-width: 760px) {
+  .pedidos-page .stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .pedidos-page .panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .pedidos-page .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .order-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

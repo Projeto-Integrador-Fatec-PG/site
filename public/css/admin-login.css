@@ -1,0 +1,181 @@
+@import url("./login.css");
+
+/* ── Admin Login ───────────────────────────────────────────
+   Wireframe: barra pública no topo (com botão "Login
+   Administrador"), card com painel do logo à esquerda e
+   formulário (CPF, e-mail, senha) à direita, onda decorativa
+   no rodapé da página.
+   ────────────────────────────────────────────────────────── */
+
+.admin-login-page {
+  min-height: 100vh;
+  padding: 0;
+  display: block;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ── Barra de navegação pública no topo ──────────────────── */
+.admin-login-nav {
+  background: rgba(247, 233, 215, 0.96);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.admin-login-nav .container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.admin-login-nav .brand-mark img {
+  width: 34px;
+  height: 34px;
+}
+
+.admin-login-nav .site-nav a {
+  font-size: 14px;
+}
+
+/* ── Área principal ───────────────────────────────────────── */
+.admin-login-main {
+  display: grid;
+  place-items: center;
+  padding: 56px 24px 120px;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-login-page .auth-layout {
+  max-width: 980px;
+  min-height: 520px;
+  border-color: var(--border);
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ── Painel esquerdo: logo + boas-vindas ──────────────────── */
+.admin-login-page .auth-side.admin-side {
+  background: linear-gradient(155deg, #FBF1E1 0%, #F3E1C6 100%);
+  border-left: none;
+  border-right: 1.5px solid var(--border);
+  color: var(--cafe);
+  padding: 48px 40px;
+}
+
+.admin-login-page .auth-side.admin-side .brand-mark img {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 6px;
+}
+
+.admin-login-page .auth-side.admin-side h2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--chocolate);
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+}
+
+.admin-login-page .auth-side.admin-side h1 {
+  font-size: clamp(20px, 2.6vw, 26px);
+  color: var(--cafe);
+  margin-bottom: 12px;
+}
+
+.admin-login-page .auth-side.admin-side .sub {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+/* ── Painel direito: formulário ───────────────────────────── */
+.admin-login-page .auth-form {
+  padding: 56px 48px;
+}
+
+.admin-login-page .auth-form .field input {
+  border-color: #C5A989;
+  padding-left: 14px;
+}
+
+/* O campo de senha aqui só tem ícone à direita (olho), sem ícone à esquerda */
+.admin-login-page .input-icon-wrap input {
+  padding-left: 14px;
+  padding-right: 38px;
+}
+
+.admin-login-page .auth-form .button-dark {
+  background: var(--chocolate);
+  letter-spacing: 0.03em;
+}
+
+.admin-login-page .auth-form .button-dark:hover {
+  background: var(--cafe);
+}
+
+.form-footer-link {
+  text-align: right;
+  margin: -6px 0 4px;
+}
+
+.form-footer-link a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--chocolate);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Mensagem de erro */
+.login-error {
+  min-height: 20px;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.2s ease;
+}
+
+.login-error:not(:empty) {
+  background: rgba(178, 58, 54, 0.08);
+  border: 1px solid rgba(178, 58, 54, 0.2);
+}
+
+/* ── Onda decorativa no rodapé da página ─────────────────── */
+.admin-login-wave {
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: -70px;
+  height: 160px;
+  background: var(--bege);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  z-index: 0;
+}
+
+/* ── Responsividade admin login ──────────────────────────── */
+@media (max-width: 760px) {
+  .admin-login-nav .site-nav {
+    display: none;
+  }
+
+  .admin-login-page .auth-layout {
+    max-width: 100%;
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .admin-login-page .auth-side.admin-side {
+    border-right: none;
+    border-bottom: 1.5px solid var(--border);
+    padding: 36px 24px;
+  }
+
+  .admin-login-main {
+    padding: 32px 16px 100px;
+  }
+}

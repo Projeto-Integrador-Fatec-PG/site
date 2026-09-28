@@ -1,0 +1,278 @@
+@import url("./style.css");
+
+/* ── Login (cliente) ───────────────────────────────────────
+   Wireframe: split layout — formulário à esquerda com logo,
+   lado direito com imagem de doces e tagline cursiva.
+   Fundo geral: creme suave.
+   ────────────────────────────────────────────────────────── */
+
+/* Fundo da página */
+.auth-page {
+  background-color: var(--creme);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 90% 0%, rgba(255,244,225,0.8) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 10% 100%, rgba(217,106,74,0.06) 0%, transparent 50%);
+}
+
+/* Card principal */
+.auth-layout {
+  border-color: var(--border);
+  box-shadow: var(--shadow-lg), 0 0 0 4px rgba(107,58,46,0.04);
+}
+
+/* ── Lado do formulário ───────────────────────────────────── */
+.auth-form {
+  padding: 52px 48px;
+}
+
+/* Logo centralizado com tamanho maior */
+.auth-form .brand {
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 6px;
+}
+
+.auth-form .brand-mark img {
+  width: 56px;
+  height: 56px;
+}
+
+.auth-form .brand span:last-child {
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+.auth-form h1 {
+  font-size: clamp(22px, 3vw, 28px);
+  margin-bottom: 6px;
+}
+
+/* Subtítulo */
+.auth-form .sub {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* Campos com ícone */
+.auth-form .field input {
+  padding-left: 42px;
+  border-color: var(--border);
+  background: #FFFAF1;
+  border-radius: var(--radius-sm);
+  height: 48px;
+  font-size: 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.auth-form .field input:focus {
+  border-color: var(--chocolate);
+  box-shadow: 0 0 0 3px rgba(107, 58, 46, 0.1);
+}
+
+/* Wrapper de campo com ícone (esquerda) e botão de mostrar/ocultar (direita) */
+.input-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon-wrap input {
+  width: 100%;
+  padding-right: 38px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 15px;
+  color: var(--text-muted);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.input-icon-right {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px;
+}
+
+.input-icon-right:hover {
+  color: var(--chocolate);
+}
+
+/* Linha "lembrar de mim" + "esqueceu senha" */
+.auth-form .form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0 6px;
+  font-size: 13px;
+}
+
+.auth-form .form-footer label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.auth-form .form-footer input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--chocolate);
+  cursor: pointer;
+}
+
+.auth-form .form-footer a {
+  color: var(--chocolate);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Botão entrar */
+.auth-form form .button-dark {
+  margin-top: 16px;
+  height: 50px;
+  font-size: 15px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+}
+
+.auth-form .form-message {
+  min-height: 22px;
+  margin-top: 10px;
+  color: var(--chocolate);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Separador "ou" */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-light);
+}
+
+/* Linha de cadastro */
+.auth-form .sub:last-child {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.auth-form .sub:last-child .text-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--chocolate);
+}
+
+/* Botão criar conta (outline) */
+.auth-form .button-outline {
+  height: 46px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  width: 100%;
+}
+
+/* ── Lado decorativo (direito) ────────────────────────────── */
+.auth-side {
+  background: linear-gradient(155deg, #F5E4C8 0%, #EDD3AF 100%);
+  border-left: 1.5px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculo decorativo de fundo */
+.auth-side::before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(107,58,46,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.auth-side::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(217,106,74,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.auth-side h2 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  color: var(--cafe);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-side h2 em {
+  font-style: italic;
+  color: var(--chocolate);
+}
+
+/* Imagem de produto (placeholder ou real) */
+.auth-side .image-placeholder {
+  width: 85%;
+  height: 280px;
+  margin-top: 20px;
+  border: none;
+  background: rgba(255, 248, 230, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-lg);
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Responsividade login ─────────────────────────────────── */
+@media (max-width: 760px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .auth-side {
+    display: none;
+  }
+
+  .auth-form {
+    padding: 40px 28px;
+  }
+}
+
+@media (max-width: 400px) {
+  .auth-form {
+    padding: 32px 20px;
+  }
+}

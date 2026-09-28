@@ -1,0 +1,167 @@
+@import url("./style.css");
+
+/* ── Index / Home ──────────────────────────────────────────
+   Wireframe: hero com texto à esquerda + imagem à direita,
+   seção "Destaques do dia" com grid de 3 cards
+   ────────────────────────────────────────────────────────── */
+
+/* Hero: imagem levemente maior que o texto */
+.hero {
+  grid-template-columns: 1fr 1.05fr;
+  padding-top: 80px;
+}
+
+/* Gradiente sutil no fundo da hero */
+.site-page {
+  background-image:
+    radial-gradient(ellipse 70% 50% at 95% 5%, rgba(255,244,225,0.9) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 5% 95%, rgba(217,106,74,0.06) 0%, transparent 55%);
+}
+
+/* Eyebrow com traço decorativo antes */
+.hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--terracota);
+  border-radius: 2px;
+}
+
+/* Título hero */
+.hero h1 {
+  font-size: clamp(38px, 5.5vw, 66px);
+  margin: 12px 0 20px;
+}
+
+/* Botão hero: levemente maior */
+.hero .button-dark {
+  padding: 14px 32px;
+  font-size: 15px;
+}
+
+/* Arte / imagem hero com borda decorativa */
+.hero-art {
+  height: 400px;
+  border-radius: 20px;
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 6px var(--bege),
+    0 0 0 8px var(--border);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-art:hover {
+  transform: translateY(-4px) rotate(0.5deg);
+  box-shadow:
+    0 20px 48px rgba(58, 33, 27, 0.18),
+    0 0 0 6px var(--bege),
+    0 0 0 8px var(--border);
+}
+
+/* ── Seção Destaques ──────────────────────────────────────── */
+.section-block {
+  padding: 20px 0 80px;
+}
+
+.section-heading .eyebrow {
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Grid de 3 colunas no home */
+.product-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Cards home: imagem um pouco maior */
+.product-card .product-image {
+  height: 180px;
+}
+
+/* Hover: levanta e escurece */
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Badge de destaque opcional no primeiro card */
+.product-card.featured {
+  border-color: var(--terracota);
+  position: relative;
+}
+
+.product-card.featured::before {
+  content: "✦ Destaque";
+  position: absolute;
+  top: -1px;
+  left: 14px;
+  background: var(--terracota);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+/* ── Wave decorativa no rodapé da hero ───────────────────── */
+.hero-wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -2px;
+}
+
+/* ── Responsividade index ────────────────────────────────── */
+@media (max-width: 960px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 44px;
+    text-align: center;
+  }
+
+  .hero .eyebrow {
+    justify-content: center;
+  }
+
+  .hero .eyebrow::before {
+    display: none;
+  }
+
+  .hero-art {
+    height: 260px;
+    order: -1;
+    box-shadow: var(--shadow-md), 0 0 0 4px var(--bege), 0 0 0 6px var(--border);
+  }
+
+  .hero .button-dark {
+    margin-inline: auto;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card .product-image {
+    height: 140px;
+  }
+}
+
+@media (max-width: 420px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

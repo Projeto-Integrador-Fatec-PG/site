@@ -1,0 +1,167 @@
+@import url("./style.css");
+
+/* ── Sobre nós ─────────────────────────────────────────────
+   Wireframe: título à esquerda + texto, imagem à direita,
+   layout limpo com bastante espaço, fundo creme
+   ────────────────────────────────────────────────────────── */
+
+.sobre-page {
+  min-height: 100vh;
+}
+
+/* Story ocupa quase a tela toda */
+.sobre-page .story {
+  min-height: calc(100vh - 80px);
+  padding: 64px 0 72px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 72px;
+}
+
+/* Eyebrow da seção */
+.sobre-page .eyebrow {
+  margin-bottom: 8px;
+}
+
+/* Título */
+.sobre-page .story h1 {
+  font-size: clamp(30px, 5vw, 50px);
+  line-height: 1.1;
+  margin-bottom: 22px;
+  color: var(--cafe);
+}
+
+/* Marca decorativa no título */
+.sobre-page .story h1 em {
+  color: var(--terracota);
+  font-style: italic;
+}
+
+/* Texto narrativo */
+.sobre-page .story p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.sobre-page .story p:last-of-type {
+  margin-bottom: 30px;
+}
+
+/* Botão "Ver Cardápio" */
+.sobre-page .story .button-dark {
+  display: inline-flex;
+  padding: 13px 30px;
+}
+
+/* Imagem da história */
+.sobre-page .story .image-placeholder {
+  height: 420px;
+  border-radius: 20px;
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 6px var(--bege),
+    0 0 0 8px var(--border);
+  background: linear-gradient(155deg, #EDD8BC, #F8EFE0);
+}
+
+.sobre-page .story .image-placeholder img {
+  width: 48%;
+  height: 48%;
+  object-fit: contain;
+  margin: auto;
+}
+
+/* Decoração: linha vertical antes do texto */
+.story-content {
+  position: relative;
+  padding-left: 20px;
+}
+
+.story-content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--terracota), var(--bege));
+  border-radius: 3px;
+}
+
+/* Seção de valores / diferenciais */
+.sobre-values {
+  padding: 0 0 72px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 28px 22px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.value-card-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.value-card h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: var(--cafe);
+}
+
+.value-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Responsividade sobre nós ────────────────────────────── */
+@media (max-width: 900px) {
+  .sobre-values {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .sobre-page .story {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 0 52px;
+    min-height: auto;
+  }
+
+  .sobre-page .story .image-placeholder {
+    height: 260px;
+    order: -1;
+    box-shadow: var(--shadow-md), 0 0 0 4px var(--bege), 0 0 0 6px var(--border);
+  }
+
+  .story-content {
+    padding-left: 14px;
+  }
+
+  .sobre-values {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-bottom: 48px;
+  }
+
+  .sobre-page .story h1 {
+    font-size: 28px;
+  }
+}

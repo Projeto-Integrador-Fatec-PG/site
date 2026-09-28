@@ -1,0 +1,295 @@
+@import url("./style.css");
+
+/* ── Página de Produto ─────────────────────────────────────
+   Wireframe: imagem grande à esquerda com miniaturas,
+   detalhes à direita (nome, preço, sabor pills, quantidade,
+   botão "Adicionar ao carrinho"), fichas abaixo
+   (ingredientes, peso, conservação)
+   ────────────────────────────────────────────────────────── */
+
+.produto-page .detail {
+  padding: 36px 0 80px;
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────── */
+.produto-page .breadcrumb {
+  margin-bottom: 28px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.produto-page .breadcrumb a {
+  color: var(--chocolate);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.produto-page .breadcrumb a:hover {
+  color: var(--terracota);
+  text-decoration: underline;
+}
+
+.produto-page .breadcrumb .sep {
+  margin: 0 6px;
+  color: var(--border);
+}
+
+.produto-page .breadcrumb .current {
+  font-weight: 600;
+  color: var(--cafe);
+}
+
+/* ── Grid detalhe ────────────────────────────────────────── */
+.produto-page .detail-grid {
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ── Galeria ─────────────────────────────────────────────── */
+.gallery-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-image {
+  height: 420px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.detail-image > img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Setas de navegação da galeria */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 248, 239, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--chocolate);
+  z-index: 5;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.gallery-nav:hover {
+  background: var(--chocolate);
+  color: #fff;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.gallery-nav.prev { left: 12px; }
+.gallery-nav.next { right: 12px; }
+
+/* Miniaturas */
+.gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.gallery-thumbs::-webkit-scrollbar { display: none; }
+
+.gallery-thumb {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(145deg, #EDD8BC, #F8EFE0);
+  border: 2px solid var(--border-light);
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+}
+
+.gallery-thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-thumb.active,
+.gallery-thumb:hover {
+  border-color: var(--chocolate);
+  box-shadow: 0 0 0 2px rgba(107, 58, 46, 0.15);
+}
+
+.gallery-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* ── Copy / Detalhes ─────────────────────────────────────── */
+.produto-page .detail-copy {
+  padding-top: 4px;
+}
+
+.produto-page .detail-copy h1 {
+  font-size: clamp(26px, 4vw, 40px);
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+/* Descrição curta abaixo do título */
+.produto-page .detail-copy .product-tagline {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+/* Preço */
+.produto-page .price {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--terracota);
+  font-family: "Josefin Sans", sans-serif;
+  margin: 18px 0 6px;
+}
+
+/* Descrição longa */
+.produto-page .detail-copy .product-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Labels de sabor / quantidade */
+.produto-page .choice-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cafe);
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Pills de sabor */
+.produto-page .choice {
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+/* Quantidade */
+.produto-page .quantity {
+  margin: 0 0 24px;
+}
+
+/* Botão "Adicionar ao carrinho" */
+.produto-page .button-dark.full {
+  height: 52px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(107, 58, 46, 0.28);
+}
+
+.produto-page .button-dark.full:hover {
+  box-shadow: 0 10px 28px rgba(107, 58, 46, 0.36);
+}
+
+/* ── Fichas informativas (abaixo do grid) ────────────────── */
+.product-info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.info-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.info-card:hover {
+  border-color: var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.info-card-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  color: var(--chocolate);
+  opacity: 0.8;
+}
+
+.info-card-body h4 {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 5px;
+  color: var(--cafe);
+}
+
+.info-card-body p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Responsividade produto ──────────────────────────────── */
+@media (max-width: 900px) {
+  .product-info-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .produto-page .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .detail-image {
+    height: 280px;
+  }
+
+  .gallery-thumbs {
+    justify-content: center;
+  }
+
+  .produto-page .detail-copy h1 {
+    font-size: 28px;
+  }
+
+  .produto-page .price {
+    font-size: 26px;
+  }
+
+  .product-info-cards {
+    grid-template-columns: 1fr;
+  }
+}

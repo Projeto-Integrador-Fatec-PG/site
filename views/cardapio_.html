@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio | Bejiróó</title>
+    <link rel="icon" type="image/svg+xml" href="../public/imgs/logo.svg" />
+    <link rel="stylesheet" href="../public/css/cardapio.css" />
+  </head>
+  <body class="site-page cardapio-page">
+    <div data-site-header></div>
+    <main class="container section-block">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Feito hoje, com carinho</span>
+          <h1>Nosso Cardápio</h1>
+        </div>
+      </div>
+      <div class="choice" aria-label="Filtrar produtos por categoria">
+        <button class="selected" type="button" data-category-filter="todos">Todos</button>
+        <button type="button" data-category-filter="tortas">Tortas</button>
+        <button type="button" data-category-filter="bolos">Bolos</button>
+        <button type="button" data-category-filter="doces">Doces</button>
+        <button type="button" data-category-filter="sobremesas">Sobremesas</button>
+      </div>
+      <div class="product-grid" data-public-products></div>
+    </main>
+    <script src="../public/js/app.js"></script>
+    <script src="../public/js/products-store.js"></script>
+    <script src="../public/js/cardapio.js"></script>
+  </body>
+</html>
