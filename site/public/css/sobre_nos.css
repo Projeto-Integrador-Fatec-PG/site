@@ -1,9 +1,0 @@
-@import url("./style.css");
-
-.sobre-page .story {
-  min-height: calc(100vh - 82px);
-}
-
-.sobre-page .story .image-placeholder {
-  box-shadow: var(--shadow);
-}
