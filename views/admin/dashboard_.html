@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard | Bejiróó</title>
-    <link rel="icon" type="image/svg+xml" href="../../public/imgs/logo.svg" />
+    <link rel="icon" type="image/png" href="../../public/imgs/logo-bejiroo.png" />
     <link rel="stylesheet" href="../../public/css/admin-dashboard.css" />
   </head>
   <body class="dashboard-page">
     <div class="admin-shell">
       <aside class="sidebar">
         <a class="brand" href="dashboard_.html"
-          ><span class="brand-mark"><img src="../../public/imgs/logo.svg" alt="Logo Bejiróó" /></span><span>Bejiróó</span></a
+          ><span class="brand-mark"><img src="../../public/imgs/logo-bejiroo.png" alt="Logo Bejiróó" /></span><span>Bejiróó</span></a
         >
         <nav class="sidebar-nav">
-          <a class="active" href="dashboard_.html">▣ Dashboard</a
-          ><a href="gerenciar_produtos_.html">▢ Produtos</a
-          ><a href="categorias_de_produtos_.html">◇ Categorias</a
-          ><a href="lista_de_pedidos_.html">🛒 Pedidos</a
-          ><a href="configuracoes_.html">⚙ Configurações</a>
+          <a class="active" href="dashboard_.html">Dashboard</a
+          ><a href="gerenciar_produtos_.html">Produtos</a
+          ><a href="categorias_de_produtos_.html">Categorias</a
+          ><a href="lista_de_pedidos_.html">Pedidos</a
+          ><a href="configuracoes_.html">Configurações</a>
         </nav>
       </aside>
       <main class="admin-main">
@@ -30,7 +30,7 @@
           <div class="stat">
             <small>Total de Produtos</small><strong data-metric="products">0</strong>
           </div>
-          <div class="stat"><small>Receita estimada</small><strong data-metric="revenue">R$ 0</strong></div>
+          <div class="stat"><small>Valor estimado em estoque</small><strong data-metric="revenue">R$ 0</strong></div>
           <div class="stat"><small>Estoque total</small><strong data-metric="stock">0</strong></div>
         </section>
         <div class="admin-columns">
@@ -51,11 +51,11 @@
             </div>
           </section>
           <section class="panel dashboard-charts">
-            <h2>Vendas por categoria</h2>
+            <h2>Valor em estoque por categoria</h2>
             <div class="chart-bars" data-category-chart></div>
           </section>
           <section class="panel dashboard-charts">
-            <h2>Valor estimado em estoque</h2>
+            <h2>Unidades em estoque por categoria</h2>
             <div class="chart-bars" data-stock-chart></div>
           </section>
           <section class="panel">

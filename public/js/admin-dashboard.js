@@ -17,7 +17,7 @@ function initDashboardPage() {
   document.querySelector('[data-metric="stock"]').textContent = stock;
 
   document.querySelector("[data-recent-products]").innerHTML = activeProducts.slice(-5).reverse().map((product) => `
-    <tr><td>${product.name}</td><td>${categoryNames[product.category]}</td><td>${formatPrice(product.price)}</td><td class="status active">ativo</td></tr>
+    <tr><td>${product.name}</td><td>${categoryNames[product.category]}</td><td>${formatPrice(product.price)}</td><td><span class="status active">Ativo</span></td></tr>
   `).join("");
 
   const categoryTotals = categories.map((category) => ({

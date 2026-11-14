@@ -35,7 +35,7 @@ function siteHeader() {
     <header class="site-header">
       <div class="container">
         <a class="brand" href="index.html">
-          <span class="brand-mark"><img src="../public/imgs/logo.svg" alt="Logo Bejiróó"></span>
+          <span class="brand-mark"><img src="../public/imgs/logo-bejiroo.png" alt="Logo Bejiróó"></span>
           <span class="brand-name">BEJIRÓÓ</span>
         </a>
         <nav class="site-nav">${navLinksHtml}</nav>

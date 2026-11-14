@@ -1,4 +1,4 @@
-@import url("./style.css");
+@import url("./admin-common.css");
 
 /* ── Admin Lista de Pedidos ────────────────────────────────
    Wireframe: 3 stats (Pedidos Hoje / Pendentes / Concluídos)
@@ -18,7 +18,7 @@
 
 /* Stat: Pedidos Hoje */
 .pedidos-page .stat:nth-child(1) {
-  border-top: 3px solid var(--chocolate);
+  border-top: 1px solid var(--admin-line);
 }
 
 .pedidos-page .stat:nth-child(1) .stat-icon {
@@ -27,7 +27,7 @@
 
 /* Stat: Pendentes */
 .pedidos-page .stat:nth-child(2) {
-  border-top: 3px solid var(--yellow);
+  border-top: 1px solid var(--admin-line);
 }
 
 .pedidos-page .stat:nth-child(2) .stat-icon {
@@ -36,7 +36,7 @@
 
 /* Stat: Concluídos */
 .pedidos-page .stat:nth-child(3) {
-  border-top: 3px solid var(--green);
+  border-top: 1px solid var(--admin-line);
 }
 
 .pedidos-page .stat:nth-child(3) .stat-icon {
@@ -80,28 +80,25 @@
   letter-spacing: 0.01em;
 }
 
-/* Concluído: verde sólido */
 .pedidos-page .status.done {
-  background: var(--green) !important;
-  color: #fff !important;
+  background: #eaf2ec;
+  color: #4c7557;
 }
 
-/* Em Preparo: amarelo/âmbar sólido */
 .pedidos-page .status.preparing {
-  background: var(--yellow) !important;
-  color: #fff !important;
+  background: #f6f0df;
+  color: #85691f;
 }
 
-/* Pendente: vermelho sólido */
 .pedidos-page .status.pending {
-  background: var(--red) !important;
-  color: #fff !important;
+  background: #f5eee2;
+  color: #8a6536;
 }
 
 /* Ativo (genérico) */
 .pedidos-page .status.active {
-  background: var(--green) !important;
-  color: #fff !important;
+  background: #eaf2ec;
+  color: #4c7557;
 }
 
 /* ── Coluna total ─────────────────────────────────────────── */

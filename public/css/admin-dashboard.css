@@ -1,4 +1,4 @@
-@import url("./style.css");
+@import url("./admin-common.css");
 
 /* ── Admin Dashboard ───────────────────────────────────────
    Wireframe: sidebar chocolate escuro, área principal creme,
@@ -66,15 +66,15 @@
 }
 
 .dashboard-page .stat:nth-child(1) {
-  border-top: 3px solid var(--chocolate);
+  border-top: 1px solid var(--admin-line);
 }
 
 .dashboard-page .stat:nth-child(2) {
-  border-top: 3px solid var(--terracota);
+  border-top: 1px solid var(--admin-line);
 }
 
 .dashboard-page .stat:nth-child(3) {
-  border-top: 3px solid var(--green);
+  border-top: 1px solid var(--admin-line);
 }
 
 .dashboard-page .stat small {
@@ -85,7 +85,7 @@
 }
 
 .dashboard-page .stat strong {
-  font-size: 36px;
+  font-size: 30px;
   color: var(--cafe);
 }
 
@@ -100,9 +100,64 @@
   width: 46px;
 }
 
+.dashboard-page .data-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.dashboard-page .data-table th,
+.dashboard-page .data-table td {
+  padding-right: 8px;
+  padding-left: 8px;
+  white-space: normal;
+  overflow-wrap: normal;
+}
+
+.dashboard-page .data-table th:nth-child(1),
+.dashboard-page .data-table td:nth-child(1) {
+  width: 34%;
+}
+
+.dashboard-page .data-table th:nth-child(2),
+.dashboard-page .data-table td:nth-child(2) {
+  width: 22%;
+}
+
+.dashboard-page .data-table th:nth-child(3),
+.dashboard-page .data-table td:nth-child(3) {
+  width: 26%;
+}
+
+.dashboard-page .data-table th:nth-child(4),
+.dashboard-page .data-table td:nth-child(4) {
+  width: 18%;
+}
+
+.dashboard-page .data-table th:nth-child(3),
+.dashboard-page .data-table td:nth-child(3) {
+  white-space: nowrap;
+}
+
+.dashboard-page .data-table th:nth-child(4),
+.dashboard-page .data-table td:nth-child(4) {
+  white-space: nowrap;
+}
+
+.dashboard-page .data-table .status {
+  white-space: nowrap;
+}
+
 /* Destacar linha ao passar mouse */
 .dashboard-page .data-table tbody tr:hover td {
   background: rgba(233, 209, 181, 0.2);
+}
+
+.dashboard-page .status {
+  min-width: 46px;
+  padding: 4px 6px;
+  justify-content: center;
+  font-size: 9px;
 }
 
 /* ── Ações rápidas ───────────────────────────────────────── */
@@ -124,9 +179,9 @@
 
 /* ── Sidebar: item ativo destacado ───────────────────────── */
 .dashboard-page .sidebar-nav a.active {
-  background: rgba(255, 235, 200, 0.25);
+  background: rgba(255, 255, 255, 0.11);
   color: #fff;
-  box-shadow: inset 3px 0 0 rgba(255,235,200,0.5);
+  box-shadow: inset 2px 0 #d9b8a5;
 }
 
 /* ── Admin top: user badge ───────────────────────────────── */
@@ -158,5 +213,46 @@
 @media (max-width: 480px) {
   .dashboard-page .stats {
     grid-template-columns: 1fr;
+  }
+
+  .dashboard-page .data-table {
+    font-size: 10px;
+  }
+
+  .dashboard-page .data-table th,
+  .dashboard-page .data-table td {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .dashboard-page .data-table th:nth-child(2),
+  .dashboard-page .data-table td:nth-child(2) {
+    overflow-wrap: anywhere;
+  }
+
+  .dashboard-page .data-table th:nth-child(1),
+  .dashboard-page .data-table td:nth-child(1) {
+    width: 28%;
+  }
+
+  .dashboard-page .data-table th:nth-child(2),
+  .dashboard-page .data-table td:nth-child(2) {
+    width: 27%;
+    font-size: 9px;
+  }
+
+  .dashboard-page .data-table th:nth-child(3),
+  .dashboard-page .data-table td:nth-child(3) {
+    width: 26%;
+  }
+
+  .dashboard-page .data-table th:nth-child(4),
+  .dashboard-page .data-table td:nth-child(4) {
+    width: 19%;
+  }
+
+  .dashboard-page .status {
+    min-width: 34px;
+    padding: 3px;
   }
 }

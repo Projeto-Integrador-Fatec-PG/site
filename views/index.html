@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bejiróó | Doces com energia de criança</title>
-    <link rel="icon" type="image/svg+xml" href="../public/imgs/logo.svg" />
+    <link rel="icon" type="image/png" href="../public/imgs/logo-bejiroo.png" />
     <link rel="stylesheet" href="../public/css/index.css" />
   </head>
   <body class="site-page">
@@ -12,22 +12,54 @@
     <main>
       <section class="hero container narrow-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Confeitaria artesanal</span>
+          <span class="eyebrow">Feito à mão, com carinho</span>
           <h1>Doces com<br /><em>energia de criança</em></h1>
           <p>
-            Receitas feitas com carinho para transformar ingredientes simples em
-            lembranças inesquecíveis.
+            Receitas artesanais que transformam cada mordida em uma lembrança
+            gostosa. Vem descobrir seu novo doce favorito.
           </p>
-          <a class="button button-dark" href="cardapio_.html"
-            >Ver cardápio <span>→</span></a
-          >
+          <div class="hero-actions">
+            <a class="button button-dark" href="cardapio_.html"
+              >Explorar cardápio <span aria-hidden="true">→</span></a
+            >
+            <a class="button button-light" href="sobre_nos_.html">Nossa história</a>
+          </div>
+          <div class="hero-note">
+            <span class="hero-note-heart" aria-hidden="true">♡</span>
+            <span>Pequenos momentos, grandes delícias.</span>
+          </div>
         </div>
-        <div
-          class="hero-art image-placeholder reveal"
-          role="img"
-          aria-label="Imagem de doces artesanais"
-        >
-          <img src="../public/imgs/01.jpg" alt="Doces artesanais da Bejiróó" />
+        <div class="hero-visual reveal">
+          <div class="hero-art image-placeholder">
+            <img src="../public/imgs/chocolate.jpeg" alt="Doces artesanais da Bejiróó" />
+          </div>
+          <img
+            class="hero-doodle hero-strawberry"
+            src="../public/imgs/morangos-linha-rosa.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            class="hero-doodle hero-brigadeiro"
+            src="../public/imgs/brigadeiro-rosa-coracao.png"
+            alt=""
+            aria-hidden="true"
+          />
+
+        </div>
+      </section>
+      <section class="home-promises container reveal" aria-label="Nossos diferenciais">
+        <div class="promise-item">
+          <span class="promise-icon" aria-hidden="true">♡</span>
+          <div><strong>Feito com carinho</strong><span>Preparado à mão, sempre.</span></div>
+        </div>
+        <div class="promise-item">
+          <span class="promise-icon" aria-hidden="true">✿</span>
+          <div><strong>Receitas especiais</strong><span>Sabor que abraça e surpreende.</span></div>
+        </div>
+        <div class="promise-item">
+          <span class="promise-icon" aria-hidden="true">♡</span>
+          <div><strong>Momentos mais doces</strong><span>Para dividir com quem você ama.</span></div>
         </div>
       </section>
       <section class="container section-block">
@@ -35,29 +67,18 @@
           <div>
             <span class="eyebrow">Escolhas da casa</span>
             <h2>Destaques do dia</h2>
+            <p class="section-subtitle">Feitos para deixar qualquer dia mais gostoso.</p>
           </div>
           <a href="cardapio_.html" class="text-link">Ver tudo →</a>
         </div>
-        <div class="product-grid">
-          <a class="product-card" href="produto_.html?id=3"
-            ><div class="product-image"><img src="../public/imgs/04.jpg" alt="Brownie com Brigadeiro" /></div>
-            <h3>Brownie com Brigadeiro</h3>
-            <strong>R$ 12,90</strong></a
-          >
-          <a class="product-card" href="produto_.html?id=1"
-            ><div class="product-image"><img src="../public/imgs/02.jpg" alt="Bolo de Cenoura Especial" /></div>
-            <h3>Bolo de Cenoura Especial</h3>
-            <strong>R$ 42,00</strong></a
-          >
-          <a class="product-card" href="produto_.html?id=2"
-            ><div class="product-image"><img src="../public/imgs/03.jpg" alt="Torta de Chocolate" /></div>
-            <h3>Torta de Chocolate</h3>
-            <strong>R$ 45,00</strong></a
-          >
+        <div class="product-grid" data-featured-products></div>
+        <div class="section-action">
+          <a class="button button-outline" href="cardapio_.html">Ver todo o cardápio <span aria-hidden="true">→</span></a>
         </div>
       </section>
     </main>
     <script src="../public/js/app.js"></script>
+    <script src="../public/js/products-store.js"></script>
     <script src="../public/js/index.js"></script>
     <?!= HtmlService.createHtmlOutputFromFile('public/js/admin-categorias').getContent(); ?>
   </body>

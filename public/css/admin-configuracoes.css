@@ -1,4 +1,4 @@
-@import url("./style.css");
+@import url("./admin-common.css");
 
 .configuracoes-page .settings-layout {
   display: grid;
@@ -68,6 +68,7 @@
   width: 100px;
   height: 100px;
   margin: 10px auto 18px;
+  object-fit: contain;
 }
 
 .settings-brand p {

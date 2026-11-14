@@ -1,7 +1,8 @@
 function initProductPage() {
   const productId = Number(new URLSearchParams(window.location.search).get("id"));
-  const product = getProducts().find((item) => item.id === productId) || getProducts().find((item) => item.id === 3);
-  const imageFile = productImageFile(product);
+  const products = getProducts();
+  const product = products.find((item) => item.id === productId) || products.find((item) => item.id === 3);
+  const imageUrl = product ? productImageUrl(product) : "";
   const productImage = document.querySelector("[data-gallery-main-image]");
   const productTitle = document.querySelector(".detail-copy h1");
   const breadcrumbCurrent = document.querySelector(".breadcrumb .current");
@@ -16,8 +17,9 @@ function initProductPage() {
     if (tagline) tagline.textContent = product.description;
     if (description) description.textContent = product.description;
     if (price) price.textContent = formatPrice(product.price);
-    if (productImage && imageFile) {
-      productImage.src = `../public/imgs/${imageFile}`;
+    if (productImage) {
+      if (imageUrl) productImage.src = imageUrl;
+      else productImage.removeAttribute("src");
       productImage.alt = product.name;
     }
   }

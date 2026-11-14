@@ -37,11 +37,11 @@ function getProducts() {
   }
   try {
     const products = JSON.parse(saved);
-    if (!products.some((product) => productImageFile(product) === "10.jpg")) {
+    if (!products.some((product) => Number(product.id) === 17)) {
       products.push(DEFAULT_PRODUCTS.find((product) => product.id === 17));
     }
     products.forEach((product) => {
-      product.description = productDescription(product);
+      if (!product.description) product.description = productDescription(product);
     });
     localStorage.setItem(PRODUCT_STORAGE_KEY, JSON.stringify(products));
     return products;
@@ -61,6 +61,16 @@ function formatPrice(value) {
 
 function nextProductId(products) {
   return products.reduce((highest, product) => Math.max(highest, Number(product.id)), 0) + 1;
+}
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  })[character]);
 }
 
 function productDescription(product) {
@@ -84,6 +94,10 @@ function productDescription(product) {
 }
 
 function productImageFile(product) {
+  const savedImage = typeof product.image === "string" ? product.image.trim() : "";
+  if (/^data:image\/(?:png|jpeg|webp|gif);base64,/i.test(savedImage)) return savedImage;
+  if (/^[\w.-]+\.(?:png|jpe?g|webp|gif)$/i.test(savedImage)) return savedImage;
+
   const name = product.name.toLocaleLowerCase("pt-BR");
   const imageByName = [
     ["bolo de cenoura", "02.jpg"],
@@ -100,5 +114,21 @@ function productImageFile(product) {
     ["donuts", "11.jpg"],
     ["bolo salgado", "12.jpg"],
   ];
-  return imageByName.find(([label]) => name.includes(label))?.[1] || null;
+  const imageById = {
+    1: "02.jpg",
+    2: "03.jpg",
+    3: "04.jpg",
+    4: "05.jpg",
+    5: "06.jpg",
+    7: "07.jpg",
+    17: "10.jpg",
+  };
+  return imageByName.find(([label]) => name.includes(label))?.[1] || imageById[product.id] || null;
+}
+
+function productImageUrl(product, directory = "../public/imgs/") {
+  const image = productImageFile(product);
+  if (!image) return "";
+  if (image.startsWith("data:image/")) return image;
+  return `${directory}${encodeURIComponent(image)}`;
 }

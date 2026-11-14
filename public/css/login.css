@@ -276,3 +276,419 @@
     padding: 32px 20px;
   }
 }
+
+/* Login de clientes: composição fotográfica alinhada à identidade da marca.
+   As regras ficam fora do login administrativo, que também importa este arquivo. */
+.auth-page:not(.admin-login-page) {
+  padding: clamp(18px, 4vw, 48px);
+  overflow-x: hidden;
+  background-color: var(--creme);
+  background-image:
+    radial-gradient(ellipse at 12% 18%, rgba(247, 182, 176, 0.2), transparent 32%),
+    radial-gradient(ellipse at 92% 84%, rgba(217, 106, 74, 0.12), transparent 34%);
+}
+
+.auth-page:not(.admin-login-page) .auth-layout {
+  width: min(1060px, 100%);
+  min-height: 640px;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  border: 1px solid rgba(107, 58, 46, 0.14);
+  border-radius: 26px;
+  box-shadow: 0 28px 80px rgba(58, 33, 27, 0.14), 0 3px 12px rgba(58, 33, 27, 0.05);
+  animation: login-arrive 650ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.auth-page:not(.admin-login-page) .auth-form {
+  padding: clamp(36px, 5.2vw, 66px);
+  align-items: stretch;
+  background: var(--surface);
+}
+
+.auth-page:not(.admin-login-page) .auth-form .brand {
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 9px;
+  margin-bottom: 48px;
+}
+
+.auth-page:not(.admin-login-page) .auth-form .brand-mark img {
+  width: 42px;
+  height: 42px;
+}
+
+.auth-page:not(.admin-login-page) .auth-form .brand span:last-child {
+  color: var(--chocolate);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.auth-page:not(.admin-login-page) .auth-kicker,
+.auth-page:not(.admin-login-page) .auth-side-kicker {
+  display: block;
+  color: var(--terracota);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.auth-page:not(.admin-login-page) .auth-form h1 {
+  margin: 10px 0 8px;
+  color: var(--cafe);
+  font-size: clamp(27px, 3.2vw, 36px);
+  line-height: 1.08;
+  text-align: left;
+}
+
+.auth-page:not(.admin-login-page) .auth-form > .sub {
+  margin: 0 0 32px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.auth-page:not(.admin-login-page) .auth-form form {
+  gap: 3px;
+}
+
+.auth-page:not(.admin-login-page) .auth-form .field {
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.auth-page:not(.admin-login-page) .auth-form .field label {
+  color: var(--cafe);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.auth-page:not(.admin-login-page) .auth-form .field input {
+  height: 52px;
+  border: 1px solid #e4d4c2;
+  border-radius: 10px;
+  background: #fffdf9;
+  font-size: 13px;
+}
+
+.auth-page:not(.admin-login-page) .auth-form .field input:focus {
+  border-color: var(--terracota);
+  box-shadow: 0 0 0 3px rgba(217, 106, 74, 0.12);
+}
+
+.auth-page:not(.admin-login-page) .input-icon {
+  left: 14px;
+  display: grid;
+  place-items: center;
+  color: #a28770;
+}
+
+.auth-page:not(.admin-login-page) .input-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.auth-page:not(.admin-login-page) .input-icon-wrap input {
+  padding-left: 42px;
+}
+
+.auth-page:not(.admin-login-page) .input-icon-right {
+  right: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.auth-page:not(.admin-login-page) .input-icon-right:focus-visible {
+  outline: 2px solid var(--terracota);
+  outline-offset: 2px;
+}
+
+.auth-page:not(.admin-login-page) .form-footer {
+  margin: 4px 0 8px;
+  gap: 10px;
+  font-size: 11px;
+}
+
+.auth-page:not(.admin-login-page) .form-footer label {
+  gap: 8px;
+}
+
+.auth-page:not(.admin-login-page) .form-footer input[type="checkbox"] {
+  accent-color: var(--terracota);
+}
+
+.auth-page:not(.admin-login-page) .form-footer a {
+  color: var(--terracota);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.auth-page:not(.admin-login-page) .form-footer a:hover,
+.auth-page:not(.admin-login-page) .auth-form .sub:last-child .text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.auth-page:not(.admin-login-page) .auth-form form .button-dark {
+  height: 52px;
+  margin-top: 12px;
+  border-radius: 10px;
+  background: var(--chocolate);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.auth-page:not(.admin-login-page) .auth-form form .button-dark:hover {
+  background: var(--cafe);
+  box-shadow: 0 8px 20px rgba(58, 33, 27, 0.2);
+  transform: translateY(-2px);
+}
+
+.auth-page:not(.admin-login-page) .auth-form .form-message {
+  margin-top: 8px;
+}
+
+.auth-page:not(.admin-login-page) .auth-divider {
+  margin: 24px 0 15px;
+  color: #a28770;
+}
+
+.auth-page:not(.admin-login-page) .auth-form .sub:last-child {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+.auth-page:not(.admin-login-page) .auth-form .sub:last-child .text-link {
+  color: var(--terracota);
+  font-size: 12px;
+}
+
+.auth-page:not(.admin-login-page) .auth-side {
+  align-items: stretch;
+  justify-content: center;
+  gap: 22px;
+  padding: clamp(30px, 4vw, 48px);
+  border: 0;
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(247, 182, 176, 0.2), transparent 38%),
+    linear-gradient(150deg, #553027 0%, #3a211b 76%);
+  text-align: left;
+  color: #fff8ef;
+}
+
+.auth-page:not(.admin-login-page) .auth-side::before {
+  top: auto;
+  right: -85px;
+  bottom: -125px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(247, 182, 176, 0.13), transparent 68%);
+}
+
+.auth-page:not(.admin-login-page) .auth-side::after {
+  top: -110px;
+  left: -115px;
+  width: 290px;
+  height: 290px;
+  background: radial-gradient(circle, rgba(233, 209, 181, 0.1), transparent 70%);
+}
+
+.auth-page:not(.admin-login-page) .auth-side-copy,
+.auth-page:not(.admin-login-page) .auth-photo {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-page:not(.admin-login-page) .auth-side-kicker {
+  color: #efb3a5;
+}
+
+.auth-page:not(.admin-login-page) .auth-side h2 {
+  margin: 10px 0 9px;
+  color: #fff8ef;
+  font-size: clamp(28px, 3.3vw, 39px);
+  line-height: 1.08;
+}
+
+.auth-page:not(.admin-login-page) .auth-side h2 em {
+  color: #f2b5ae;
+}
+
+.auth-page:not(.admin-login-page) .auth-side-copy p {
+  max-width: 350px;
+  color: rgba(255, 248, 239, 0.76);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.auth-page:not(.admin-login-page) .auth-photo {
+  height: clamp(220px, 27vw, 300px);
+  overflow: visible;
+  border: 6px solid rgba(255, 248, 239, 0.92);
+  border-radius: 15px 15px 66px 15px;
+  background: #edd8bc;
+  box-shadow: 0 16px 36px rgba(20, 10, 7, 0.22);
+  transform: rotate(-1.5deg);
+  transition: transform 350ms ease, box-shadow 350ms ease;
+}
+
+.auth-page:not(.admin-login-page) .auth-photo:hover {
+  box-shadow: 0 20px 42px rgba(20, 10, 7, 0.28);
+  transform: rotate(0) translateY(-3px);
+}
+
+.auth-page:not(.admin-login-page) .auth-photo > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px 9px 59px 9px;
+  object-fit: cover;
+}
+
+.auth-page:not(.admin-login-page) .auth-photo-caption {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  padding: 8px 11px;
+  border: 1px solid rgba(107, 58, 46, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.95);
+  box-shadow: 0 3px 12px rgba(58, 33, 27, 0.12);
+  color: var(--chocolate);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.auth-page:not(.admin-login-page) .auth-photo-caption > span {
+  color: var(--vermelho);
+  font-size: 15px;
+}
+
+.auth-page:not(.admin-login-page) .auth-doodle {
+  position: absolute;
+  z-index: 2;
+  width: clamp(72px, 9vw, 100px);
+  pointer-events: none;
+  animation: login-float 5s ease-in-out infinite;
+}
+
+.auth-page:not(.admin-login-page) .auth-doodle-strawberry {
+  top: 24%;
+  right: 1%;
+  rotate: 13deg;
+}
+
+.auth-page:not(.admin-login-page) .auth-doodle-brigadeiro {
+  bottom: 8%;
+  left: 0;
+  width: clamp(82px, 10vw, 112px);
+  animation-delay: -2.5s;
+}
+
+@keyframes login-arrive {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes login-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -7px; }
+}
+
+@media (max-width: 760px) {
+  .auth-page:not(.admin-login-page) {
+    display: block;
+    padding: 18px 14px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-layout {
+    width: min(480px, 100%);
+    min-height: 0;
+    margin: 0 auto;
+    grid-template-columns: minmax(0, 1fr);
+    border-radius: 20px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-side {
+    display: flex;
+    order: -1;
+    gap: 14px;
+    padding: 26px 26px 22px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-side h2 {
+    font-size: clamp(26px, 7vw, 32px);
+  }
+
+  .auth-page:not(.admin-login-page) .auth-side-copy p {
+    max-width: 300px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-photo {
+    height: clamp(175px, 52vw, 230px);
+    margin: 0 10px 3px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-doodle-strawberry {
+    top: 10%;
+    right: 2%;
+    width: 72px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-doodle-brigadeiro {
+    bottom: 5%;
+    left: 0;
+    width: 78px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-form {
+    padding: 30px clamp(24px, 7vw, 38px) 34px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-form .brand {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 400px) {
+  .auth-page:not(.admin-login-page) {
+    padding: 10px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-side {
+    padding: 24px 20px 18px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-form {
+    padding: 26px 20px 30px;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-form .form-footer {
+    font-size: 10px;
+  }
+
+  .auth-page:not(.admin-login-page) .form-footer a {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-page:not(.admin-login-page) .auth-layout,
+  .auth-page:not(.admin-login-page) .auth-doodle {
+    animation: none;
+  }
+
+  .auth-page:not(.admin-login-page) .auth-photo,
+  .auth-page:not(.admin-login-page) .auth-form form .button-dark {
+    transition: none;
+  }
+}

@@ -4,30 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | Bejiróó</title>
-    <link rel="icon" type="image/svg+xml" href="../public/imgs/logo.svg" />
+    <link rel="icon" type="image/png" href="../public/imgs/logo-bejiroo.png" />
     <link rel="stylesheet" href="../public/css/login.css" />
   </head>
   <body class="auth-page">
     <main class="auth-layout">
       <section class="auth-form">
         <a class="brand" href="index.html"
-          ><span class="brand-mark"><img src="../public/imgs/logo.svg" alt="Logo Bejiróó" /></span
+          ><span class="brand-mark"><img src="../public/imgs/logo-bejiroo.png" alt="Logo Bejiróó" /></span
           ><span>BEJIRÓÓ</span></a
         >
-        <h1>Bem-vindo de volta! 🍪</h1>
-        <p class="sub">Faça login para acessar sua conta</p>
+        <span class="auth-kicker">Sua conta Bejiróó</span>
+        <h1>Que bom ter você por aqui</h1>
+        <p class="sub">Entre para continuar suas compras com a gente.</p>
         <form>
           <div class="field">
             <label for="email">E-mail</label>
             <div class="input-icon-wrap">
-              <span class="input-icon">✉</span>
+              <span class="input-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+              </span>
               <input id="email" type="email" placeholder="Digite seu e-mail" required autocomplete="email" />
             </div>
           </div>
           <div class="field">
             <label for="password">Senha</label>
             <div class="input-icon-wrap">
-              <span class="input-icon">🔒</span>
+              <span class="input-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg>
+              </span>
               <input
                 id="password"
                 type="password"
@@ -59,8 +64,17 @@
         </p>
       </section>
       <section class="auth-side">
-        <h2>Doces momentos<br /><em>começam aqui.</em></h2>
-        <div class="image-placeholder">cupcake<br />+ brownie</div>
+        <div class="auth-side-copy">
+          <span class="auth-side-kicker">Um carinho em cada pedaço</span>
+          <h2>Tem dias que pedem<br /><em>um docinho.</em></h2>
+          <p>Receitas artesanais para deixar os momentos simples ainda mais gostosos.</p>
+        </div>
+        <div class="auth-photo">
+          <img src="../public/imgs/01.jpg" alt="Brigadeiros artesanais feitos pela Bejiróó" />
+          <span class="auth-photo-caption"><span aria-hidden="true">♡</span> Feito com carinho, para compartilhar</span>
+        </div>
+        <img class="auth-doodle auth-doodle-strawberry" src="../public/imgs/morangos-linha-rosa.png" alt="" aria-hidden="true" />
+        <img class="auth-doodle auth-doodle-brigadeiro" src="../public/imgs/brigadeiro-rosa-coracao.png" alt="" aria-hidden="true" />
       </section>
     </main>
     <script src="../public/js/app.js"></script>

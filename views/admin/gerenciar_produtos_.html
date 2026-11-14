@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerenciar Produtos | Bejiróó</title>
-    <link rel="icon" type="image/svg+xml" href="../../public/imgs/logo.svg" />
+    <link rel="icon" type="image/png" href="../../public/imgs/logo-bejiroo.png" />
     <link rel="stylesheet" href="../../public/css/admin-produtos.css" />
   </head>
   <body class="produtos-page">
     <div class="admin-shell">
       <aside class="sidebar">
         <a class="brand" href="dashboard_.html"
-          ><span class="brand-mark"><img src="../../public/imgs/logo.svg" alt="Logo Bejiróó" /></span><span>Bejiróó</span></a
+          ><span class="brand-mark"><img src="../../public/imgs/logo-bejiroo.png" alt="Logo Bejiróó" /></span><span>Bejiróó</span></a
         >
         <nav class="sidebar-nav">
-          <a href="dashboard_.html">▣ Dashboard</a
-          ><a class="active" href="gerenciar_produtos_.html">▢ Produtos</a
-          ><a href="categorias_de_produtos_.html">◇ Categorias</a
-          ><a href="lista_de_pedidos_.html">🛒 Pedidos</a
-          ><a href="configuracoes_.html">⚙ Configurações</a>
+          <a href="dashboard_.html">Dashboard</a
+          ><a class="active" href="gerenciar_produtos_.html">Produtos</a
+          ><a href="categorias_de_produtos_.html">Categorias</a
+          ><a href="lista_de_pedidos_.html">Pedidos</a
+          ><a href="configuracoes_.html">Configurações</a>
         </nav>
       </aside>
       <main class="admin-main">
@@ -28,7 +28,11 @@
         </header>
         <section class="panel">
           <div class="panel-header">
-            <h2>Produtos cadastrados</h2>
+            <div class="panel-heading-copy">
+              <span class="panel-eyebrow">Catálogo da loja</span>
+              <h2>Produtos cadastrados</h2>
+              <p>Consulte preços e estoque ou atualize os itens disponíveis.</p>
+            </div>
             <button class="button button-dark" type="button" data-open-product-form>Adicionar produto</button>
           </div>
           <div class="toolbar">
@@ -78,7 +82,9 @@
             <label>Estoque<input name="stock" type="number" min="0" step="1" required /></label>
           </div>
           <label>Descrição<textarea name="description" rows="3" maxlength="200" required></textarea></label>
-          <label>Rótulo da imagem<input name="image" maxlength="30" placeholder="ex.: trufa" /></label>
+          <input type="hidden" name="imageSource" />
+          <label class="product-image-upload">Foto do produto<input name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" /><span>Escolha uma foto para exibi-la no início, no cardápio e nos detalhes do produto.</span></label>
+          <div class="product-image-preview" data-product-image-preview hidden><img alt="Prévia da foto do produto" /></div>
           <p class="form-message" data-product-message aria-live="polite"></p>
           <div class="product-form-actions"><button class="button button-light" type="button" data-close-product-form>Cancelar</button><button class="button button-dark" type="submit">Salvar produto</button></div>
         </form>

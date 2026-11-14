@@ -8,10 +8,10 @@ function initMenuPage() {
     const products = getProducts().filter((product) => product.active && (selectedCategory === "todos" || product.category === selectedCategory));
     grid.innerHTML = products.map((product) => `
       <a class="product-card" href="produto_.html?id=${product.id}" data-category="${product.category}">
-        <div class="product-image">${productImageFile(product) ? `<img src="../public/imgs/${productImageFile(product)}" alt="${product.name}">` : product.image}</div>
-        <h3>${product.name}</h3>
+        <div class="product-image">${productImageFile(product) ? `<img src="${escapeHTML(productImageUrl(product))}" alt="${escapeHTML(product.name)}">` : escapeHTML(product.image)}</div>
+        <h3>${escapeHTML(product.name)}</h3>
         <strong>${formatPrice(product.price)}</strong>
-        <p class="product-desc">${product.description}</p>
+        <p class="product-desc">${escapeHTML(product.description)}</p>
       </a>
     `).join("");
   };
